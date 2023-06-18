@@ -8,7 +8,10 @@ def InsertData():
     iHi.MyExecute(sql)
 
 def DeleteData():
-    print( ' ::: Student Assignment ::: ' )
+    id = input('Enter Emp ID: ')
+    sql = f"delete from tbl_emp where id = {id}"
+    iHi.MyExecute(sql)
+
 
 def UpdateData():
     id = input('Enter Emp ID: ')
@@ -19,7 +22,7 @@ def UpdateData():
 
 def ReadData():
     en = input('Enter Emp Name: ')
-    DT = iHi.MyRead("Select * From tbl_emp")
+    DT = iHi.MyRead(f"Select * From tbl_emp where emp_name like '%{en}%'")
     for i in DT:
         print(i)
 
